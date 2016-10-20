@@ -1,0 +1,50 @@
+[
+    {
+        "merged": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/res/merged/androidTest/debug/anim/right_in.xml",
+        "source": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/bundles/debug/res/anim/right_in.xml"
+    },
+    {
+        "merged": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/res/merged/androidTest/debug/anim/right_out.xml",
+        "source": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/bundles/debug/res/anim/right_out.xml"
+    },
+    {
+        "merged": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/res/merged/androidTest/debug/anim/left_out.xml",
+        "source": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/bundles/debug/res/anim/left_out.xml"
+    },
+    {
+        "merged": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/res/merged/androidTest/debug/anim/fade_out.xml",
+        "source": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/bundles/debug/res/anim/fade_out.xml"
+    },
+    {
+        "merged": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/res/merged/androidTest/debug/anim/bottom_in.xml",
+        "source": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/bundles/debug/res/anim/bottom_in.xml"
+    },
+    {
+        "merged": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/res/merged/androidTest/debug/anim/fade_in.xml",
+        "source": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/bundles/debug/res/anim/fade_in.xml"
+    },
+    {
+        "merged": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/res/merged/androidTest/debug/anim/top_in.xml",
+        "source": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/bundles/debug/res/anim/top_in.xml"
+    },
+    {
+        "merged": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/res/merged/androidTest/debug/anim/scale_out.xml",
+        "source": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/bundles/debug/res/anim/scale_out.xml"
+    },
+    {
+        "merged": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/res/merged/androidTest/debug/anim/bottom_out.xml",
+        "source": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/bundles/debug/res/anim/bottom_out.xml"
+    },
+    {
+        "merged": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/res/merged/androidTest/debug/anim/scale_in.xml",
+        "source": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/bundles/debug/res/anim/scale_in.xml"
+    },
+    {
+        "merged": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/res/merged/androidTest/debug/anim/top_out.xml",
+        "source": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/bundles/debug/res/anim/top_out.xml"
+    },
+    {
+        "merged": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/res/merged/androidTest/debug/anim/left_in.xml",
+        "source": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/bundles/debug/res/anim/left_in.xml"
+    }
+]

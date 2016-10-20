@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="/app/work/HuiPeiTong/AndroidAppFrame/src/main/assets"/><source path="/app/work/HuiPeiTong/AndroidAppFrame/build/generated/assets/shaders/debug"/></dataSet><dataSet config="debug"><source path="/app/work/HuiPeiTong/AndroidAppFrame/src/debug/assets"/></dataSet></merger>

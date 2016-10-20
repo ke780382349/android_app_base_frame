@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/res/merged/debug/layout/hello_world.xml",
+        "source": "/app/work/HuiPeiTong/AndroidAppFrame/src/main/res/layout/hello_world.xml"
+    },
+    {
+        "merged": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/res/merged/debug/layout/base_activity.xml",
+        "source": "/app/work/HuiPeiTong/AndroidAppFrame/src/main/res/layout/base_activity.xml"
+    }
+]
