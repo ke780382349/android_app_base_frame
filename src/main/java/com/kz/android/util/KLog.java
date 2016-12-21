@@ -3,6 +3,9 @@ package com.kz.android.util;
 
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Log统一管理类
  *
@@ -25,6 +28,7 @@ public final class KLog {
     private static final String WARN = "w";
     private static final String VERBOSE = "v";
     private static final String DEBUG = "d";
+    private static final int MAX_LENGTH = 3000;
 
     public static void i(String tag, Object obj) {
         if (LOG) {
@@ -34,7 +38,7 @@ public final class KLog {
 
     public static void i(Object object) {
         if (LOG) {
-            inner_log(object);
+            inner_log(object.toString());
         }
     }
 
@@ -56,19 +60,19 @@ public final class KLog {
         }
     }
 
-    public static void d(String tag, Object object) {
-        if(LOG){
-
-        }
-    }
-
     public static void d(Object object) {
         if (LOG) {
             inner_log(object);
         }
     }
 
-    static void inner_log(Object object) {
+    public static void d(String tag, Object obj) {
+        if (LOG) {
+            splitString(tag, obj.toString());
+        }
+    }
+
+    private static void inner_log(Object object) {
         if (KJavaStack.check_null_obj(object)) {
             StringBuffer sb = new StringBuffer();
             sb.append(NULL_OBJ).append("  ");
@@ -81,7 +85,7 @@ public final class KLog {
         check_caller(object);
     }
 
-    static void check_caller(Object object) {
+    private static void check_caller(Object object) {
         String method = KJavaStack.getCallerMethod(3);
         String caller = KJavaStack.getCaller(CLASS_NAME);
         if (method == null) {
@@ -93,7 +97,7 @@ public final class KLog {
             caller = "KLog";
         }
         if (method.equals(INFO)) {
-            Log.i(caller, object.toString());
+            splitString(caller, object.toString());
         } else if (method.equals(DEBUG)) {
             Log.d(caller, object.toString());
         } else if (method.equals(VERBOSE)) {
@@ -102,6 +106,20 @@ public final class KLog {
             Log.e(caller, object.toString());
         } else if (method.equals(WARN)) {
             Log.w(caller, object.toString());
+        }
+    }
+
+    static void splitString(String tag, String content) {
+        long length = content.length();
+        if (length < MAX_LENGTH || length == MAX_LENGTH){
+            Log.d(tag, content);
+        } else {
+            while (content.length() > MAX_LENGTH) {
+                String logContent = content.substring(0, MAX_LENGTH);
+                content = content.replace(logContent, "");
+                Log.d(tag, logContent);
+            }
+            Log.d(tag, content);
         }
     }
 }

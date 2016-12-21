@@ -1,6 +1,6 @@
 [
     {
-        "merged": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/res/merged/release/mipmap-hdpi-v4/ic_launcher.png",
-        "source": "/app/work/HuiPeiTong/AndroidAppFrame/src/main/res/mipmap-hdpi/ic_launcher.png"
+        "merged": "/app/work/HuiPeiTong/app_lib/build/intermediates/res/merged/release/mipmap-hdpi-v4/ic_launcher.png",
+        "source": "/app/work/HuiPeiTong/app_lib/src/main/res/mipmap-hdpi/ic_launcher.png"
     }
 ]

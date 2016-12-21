@@ -12,12 +12,12 @@
 
         <ImageView
             android:id="@+id/title_left_img"
-            android:layout_width="@dimen/px80"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:paddingLeft="@dimen/px20"
-            android:paddingRight="@dimen/px20"
+            android:padding="@dimen/px20"
+            android:scaleType="centerCrop"
             android:src="@drawable/title_back" />
 
         <TextView
@@ -36,17 +36,11 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:ellipsize="end"
+            android:maxEms="7"
+            android:singleLine="true"
             android:text="@string/app_name"
             android:textSize="@dimen/sp40" />
 
-        <LinearLayout
-            android:id="@+id/title_center_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_toRightOf="@id/title_left_img"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:visibility="gone" />
 
         <ImageView
             android:id="@+id/title_right_img"
@@ -65,6 +59,16 @@
             android:layout_marginRight="@dimen/px20"
             android:gravity="center"
             android:singleLine="true" />
+
+        <LinearLayout
+            android:id="@+id/title_center_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toLeftOf="@id/title_right_text"
+            android:layout_toRightOf="@id/title_left_img"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone" />
 
         <LinearLayout
             android:id="@+id/title_right_layout"

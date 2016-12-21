@@ -7,12 +7,8 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.HandlerThread;
-import android.text.TextUtils;
-import android.text.format.Formatter;
-import android.util.ArrayMap;
-import android.util.Log;
 
-import com.alibaba.fastjson.JSON;
+import com.kz.android.app.FrameContext;
 import com.kz.android.bean.HttpBaseParams;
 import com.kz.android.bean.HttpBean;
 import com.kz.android.bean.HttpHeaderBean;
@@ -23,24 +19,16 @@ import com.kz.android.util.KNetwork;
 import com.kz.android.util.KToast;
 
 import org.json.JSONException;
-import org.json.JSONObject;
+import org.json.JSONTokener;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
-import java.nio.charset.Charset;
-import java.nio.charset.CharsetDecoder;
-import java.nio.charset.StandardCharsets;
-import java.text.Format;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import okhttp3.Call;
@@ -60,10 +48,13 @@ public class HttpServer implements AppServer {
     private OkHttpClient mHttpClient;
     private Context mContext;
     private Activity mActivity;
+    private boolean isPrintOriginResponse;
     private static final String NO_AVAILABLE_NET = "网络无效";
     private static final String THREAD_NAME = HttpServer.class.getSimpleName();
     private static final long TIME_OUT = 30;
     private static final long READ_TIME_OUT = TIME_OUT;
+
+    private static final Map<Activity, List<Object>> ALL_DIALOG = new HashMap<>();
 
     HttpServer() {
     }
@@ -71,10 +62,28 @@ public class HttpServer implements AppServer {
     @Override
     public void initServer(Context context) {
         mContext = context;
-        mHttpClient = new OkHttpClient().newBuilder().connectTimeout(TIME_OUT, TimeUnit.SECONDS).readTimeout(READ_TIME_OUT, TimeUnit.SECONDS)
+        mHttpClient = new OkHttpClient().newBuilder()
+                .connectTimeout(TIME_OUT, TimeUnit.SECONDS)
+                .readTimeout(READ_TIME_OUT, TimeUnit.SECONDS)
                 .build();
         HandlerThread mHandlerThread = new HandlerThread(THREAD_NAME);
         mHandlerThread.start();
+    }
+
+    /**
+     * 清理指定activity下的所有dialog
+     */
+    public void clearDialog(Activity activity) {
+        List<Object> dialogs = ALL_DIALOG.get(activity);
+        if (dialogs == null) {
+            return;
+        }
+        for (Object dialog : dialogs) {
+            if (dialog == null) {
+                continue;
+            }
+            ((Dialog) dialog).dismiss();
+        }
     }
 
     /**
@@ -90,6 +99,11 @@ public class HttpServer implements AppServer {
 
         private HttpLoader(Dialog dialog) {
             this.dialog = dialog;
+        }
+
+        public HttpLoader isPrintOriginResponse(boolean bool) {
+            isPrintOriginResponse = bool;
+            return this;
         }
 
         /**
@@ -116,8 +130,12 @@ public class HttpServer implements AppServer {
                     }
                     paramsTemp.append(bean.key).append("=").append(bean.value).append("&");
                 }
-                sb.deleteCharAt(sb.length() - 1);
-                paramsTemp.deleteCharAt(paramsTemp.length() - 1);
+                if (sb.length() > 0) {
+                    sb.deleteCharAt(sb.length() - 1);
+                }
+                if (paramsTemp.length() > 0) {
+                    paramsTemp.deleteCharAt(paramsTemp.length() - 1);
+                }
                 url = sb.toString();
                 mStr = paramsTemp.toString();
             }
@@ -164,7 +182,7 @@ public class HttpServer implements AppServer {
                     }
                 }
             }
-            performInterface(request.build(), callback);
+            performInterface(request, callback);
         }
 
         /**
@@ -174,63 +192,83 @@ public class HttpServer implements AppServer {
          * @since 创建时间：2016年4月1日 下午3:37:13
          */
         void post(URL url, List<HttpBean> list, HttpResponse callback) {
-            FormBody.Builder builder = new FormBody.Builder();
             Request.Builder requestBuilder = new Request.Builder();
             requestBuilder.url(url);
-            StringBuilder sb = new StringBuilder();
+
+            FormBody.Builder formBody = new FormBody.Builder();
+            StringBuilder paramsString = new StringBuilder();
             if (list != null) {
                 for (int i = 0; i < list.size(); i++) {
-                    if (list.get(i) instanceof HttpParamsBean) {
-                        builder.add(list.get(i).key, TextUtils.isEmpty(list.get(i).value) ? "" : list.get(i).value);
-                        sb.append(list.get(i).key).append("=").append(list.get(i).value).append("&");
+
+                    if ((list.get(i) instanceof HttpParamsBean) || (list.get(i) instanceof HttpBaseParams)) {
+                        formBody.add(list.get(i).key, list.get(i).value);
+                        paramsString.append(list.get(i).key).append("=").append(list.get(i).value).append("&");
                     }
-                    if (list.get(i) instanceof HttpBaseParams) {
-                        builder.add(list.get(i).key, TextUtils.isEmpty(list.get(i).value) ? "" : list.get(i).value);
-                    }
+
                     if (list.get(i) instanceof HttpHeaderBean) {
                         requestBuilder.addHeader(list.get(i).key, list.get(i).value);
                     }
+
                 }
             }
-            if (sb.length() > 0) {
-                mStr = sb.deleteCharAt(sb.length() - 1).toString();
+
+            String paramsList = paramsString.toString();
+            if (paramsList.length() > 0) {
+                mStr = paramsList.substring(0, paramsList.length() - 1);
             }
-            requestBuilder.post(builder.build());
-            Request request = requestBuilder.build();
-            performInterface(request, callback);
+
+            requestBuilder.post(formBody.build());
+
+            performInterface(requestBuilder, callback);
         }
 
         // 执行网络请求
-        private void performInterface(Request request, final HttpResponse response) {
+        private void performInterface(Request.Builder request, final HttpResponse response) {
             //处理网络
             if (!vaildNetWork()) {
                 KToast.releaseToast(mActivity, "网络不佳");
                 return;
             }
             //防止内存泄漏
-            try {
-                if (!mActivity.isFinishing() && dialog != null) {
-                    dialog.show();
-                }
-            } catch (Exception e) {
-                return;
+            ActivityServer server = (ActivityServer) FrameContext.getServer(mContext, FrameContext.APP_ACTIVITY_SERVER);
+            if (server.hasActivity(mActivity) && dialog != null) {
+                dialog.show();
             }
+            if (!ALL_DIALOG.containsKey(mActivity)) {
+                ALL_DIALOG.put(mActivity, new ArrayList<>());
+            }
+            ALL_DIALOG.get(mActivity).add(dialog);
             //开始执行网络请求部分
-            KLog.i(mActivity.getClass().getSimpleName(), "请求地址:" + mUrl);
-            KLog.i(mActivity.getClass().getSimpleName(), "请求参数:" + mStr);
-            mHttpClient.newCall(request).enqueue(new Callback() {
+            KLog.d(mActivity.getClass().getSimpleName(), "请求地址:" + mUrl);
+            KLog.d(mActivity.getClass().getSimpleName(), "请求参数:" + mStr);
+            mHttpClient.newCall(request.build()).enqueue(new Callback() {
 
                 @Override
                 public void onResponse(final Call arg0, final Response arg1) throws IOException {
                     if (dialog != null) {
+                        ALL_DIALOG.get(mActivity).remove(dialog);
                         dialog.dismiss();
                     }
                     int code = arg1.code();
-                    String json = Pattern.compile("\t|\r|\n").matcher(arg1.body().string()).replaceAll("");
+                    String responseString = arg1.body().string();
+                    String json = Pattern.compile("\t|\r|\n").matcher(responseString).replaceAll("");
+
+                    if (isPrintOriginResponse) {
+                        KLog.i(mActivity.getClass().getSimpleName(), "code:" + code + "--" + "json:" + responseString);
+                    }
+
                     //php用的Unicode编码输出的文字，所以要解码一下
-                    KLog.i(mActivity.getClass().getSimpleName(), "响应结果:" + json);
+                    JSONTokener tokener = new JSONTokener(json);
+
+                    try {
+                        Object obj = tokener.nextValue();
+                        KLog.d(mActivity.getClass().getSimpleName(), "响应结果:" + obj);
+                    } catch (JSONException e) {
+                        KLog.d(mActivity.getClass().getSimpleName(), "响应结果:" + json);
+                    }
                     final int finalCode = code;
                     final String finalJson = json;
+
                     mActivity.runOnUiThread(new Runnable() {
                         @Override
                         public void run() {

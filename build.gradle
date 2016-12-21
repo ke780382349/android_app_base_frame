@@ -18,7 +18,6 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.alibaba:fastjson:1.2.11'
-    compile 'com.squareup.okhttp3:okhttp:3.2.0'
-    compile 'com.squareup.okio:okio:1.8.0'
     compile 'com.android.support:support-v4:24.2.0'
+    compile project(':okhttp_lib')
 }

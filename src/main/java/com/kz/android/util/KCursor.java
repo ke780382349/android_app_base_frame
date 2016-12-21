@@ -8,29 +8,27 @@ import android.database.Cursor;
  */
 public class KCursor {
 	/**遍历cursor*/
-	public static void printCursor(Cursor cursor){
+	public static void printCursor(String tag,Cursor cursor){
 		checkCursor(cursor);
-		cursor.moveToFirst();
 		while(cursor.moveToNext()){
 			for(int i=0;i<cursor.getColumnCount();i++){
-				printColumnData(cursor, i);
+				printColumnData(tag,cursor, i);
 			}
-			i("--------------------------------------------");
 		}
 		cursor.moveToFirst();
 	}
 	/**打印cursor内容*/
-	public static void printColumnData(Cursor cursor,String columnName){
+	public static void printColumnData(String tag,Cursor cursor,String columnName){
 		checkCursor(cursor);
 		int index = getColumnIndex(cursor,columnName);
-		printColumnData(cursor, index);
+		printColumnData(tag,cursor, index);
 	}
 	/**打印cursor内容*/
-	public static void printColumnData(Cursor cursor,int columnIndex){
+	public static void printColumnData(String tag,Cursor cursor,int columnIndex){
 		checkCursor(cursor);
 		String data = getColumnData(cursor, columnIndex);
 		String name = getColumnName(cursor, columnIndex);
-		i(name+"\t"+data);
+		i(tag,name+"\t"+data);
 	}
 	/**获取cursor的column数据*/
 	public static String getColumnData(Cursor cursor,String columnName){
@@ -53,7 +51,7 @@ public class KCursor {
 		return cursor.getColumnIndex(columnName);
 	}
 	/**检查cursor是否为null*/
-	static void checkCursor(Cursor cursor){
+	private static void checkCursor(Cursor cursor){
 		if(cursor==null)
 			throw new NullPointerException("cursor 不能为空");
 	}

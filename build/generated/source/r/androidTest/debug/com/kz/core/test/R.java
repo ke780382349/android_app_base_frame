@@ -789,15 +789,15 @@ public final class R {
         public static final int frame_title=0x7f090000;
         public static final int frame_title_line=0x7f09000a;
         public static final int test_hello=0x7f09000c;
-        public static final int title_center_container=0x7f090004;
+        public static final int title_center_container=0x7f090006;
         public static final int title_center_text=0x7f090003;
         public static final int title_left_img=0x7f090001;
         public static final int title_left_text=0x7f090002;
-        public static final int title_right_img=0x7f090005;
+        public static final int title_right_img=0x7f090004;
         public static final int title_right_layout=0x7f090007;
         public static final int title_right_layout_img=0x7f090008;
         public static final int title_right_layout_text=0x7f090009;
-        public static final int title_right_text=0x7f090006;
+        public static final int title_right_text=0x7f090005;
     }
     public static final class layout {
         public static final int base_activity=0x7f040000;

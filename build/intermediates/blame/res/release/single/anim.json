@@ -1,50 +1,50 @@
 [
     {
-        "merged": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/res/merged/release/anim/fade_out.xml",
-        "source": "/app/work/HuiPeiTong/AndroidAppFrame/src/main/res/anim/fade_out.xml"
+        "merged": "/app/work/HuiPeiTong/app_lib/build/intermediates/res/merged/release/anim/left_out.xml",
+        "source": "/app/work/HuiPeiTong/app_lib/src/main/res/anim/left_out.xml"
     },
     {
-        "merged": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/res/merged/release/anim/scale_in.xml",
-        "source": "/app/work/HuiPeiTong/AndroidAppFrame/src/main/res/anim/scale_in.xml"
+        "merged": "/app/work/HuiPeiTong/app_lib/build/intermediates/res/merged/release/anim/right_out.xml",
+        "source": "/app/work/HuiPeiTong/app_lib/src/main/res/anim/right_out.xml"
     },
     {
-        "merged": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/res/merged/release/anim/left_in.xml",
-        "source": "/app/work/HuiPeiTong/AndroidAppFrame/src/main/res/anim/left_in.xml"
+        "merged": "/app/work/HuiPeiTong/app_lib/build/intermediates/res/merged/release/anim/left_in.xml",
+        "source": "/app/work/HuiPeiTong/app_lib/src/main/res/anim/left_in.xml"
     },
     {
-        "merged": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/res/merged/release/anim/bottom_out.xml",
-        "source": "/app/work/HuiPeiTong/AndroidAppFrame/src/main/res/anim/bottom_out.xml"
+        "merged": "/app/work/HuiPeiTong/app_lib/build/intermediates/res/merged/release/anim/scale_in.xml",
+        "source": "/app/work/HuiPeiTong/app_lib/src/main/res/anim/scale_in.xml"
     },
     {
-        "merged": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/res/merged/release/anim/right_out.xml",
-        "source": "/app/work/HuiPeiTong/AndroidAppFrame/src/main/res/anim/right_out.xml"
+        "merged": "/app/work/HuiPeiTong/app_lib/build/intermediates/res/merged/release/anim/bottom_in.xml",
+        "source": "/app/work/HuiPeiTong/app_lib/src/main/res/anim/bottom_in.xml"
     },
     {
-        "merged": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/res/merged/release/anim/top_in.xml",
-        "source": "/app/work/HuiPeiTong/AndroidAppFrame/src/main/res/anim/top_in.xml"
+        "merged": "/app/work/HuiPeiTong/app_lib/build/intermediates/res/merged/release/anim/scale_out.xml",
+        "source": "/app/work/HuiPeiTong/app_lib/src/main/res/anim/scale_out.xml"
     },
     {
-        "merged": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/res/merged/release/anim/fade_in.xml",
-        "source": "/app/work/HuiPeiTong/AndroidAppFrame/src/main/res/anim/fade_in.xml"
+        "merged": "/app/work/HuiPeiTong/app_lib/build/intermediates/res/merged/release/anim/top_in.xml",
+        "source": "/app/work/HuiPeiTong/app_lib/src/main/res/anim/top_in.xml"
     },
     {
-        "merged": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/res/merged/release/anim/scale_out.xml",
-        "source": "/app/work/HuiPeiTong/AndroidAppFrame/src/main/res/anim/scale_out.xml"
+        "merged": "/app/work/HuiPeiTong/app_lib/build/intermediates/res/merged/release/anim/bottom_out.xml",
+        "source": "/app/work/HuiPeiTong/app_lib/src/main/res/anim/bottom_out.xml"
     },
     {
-        "merged": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/res/merged/release/anim/bottom_in.xml",
-        "source": "/app/work/HuiPeiTong/AndroidAppFrame/src/main/res/anim/bottom_in.xml"
+        "merged": "/app/work/HuiPeiTong/app_lib/build/intermediates/res/merged/release/anim/fade_out.xml",
+        "source": "/app/work/HuiPeiTong/app_lib/src/main/res/anim/fade_out.xml"
     },
     {
-        "merged": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/res/merged/release/anim/top_out.xml",
-        "source": "/app/work/HuiPeiTong/AndroidAppFrame/src/main/res/anim/top_out.xml"
+        "merged": "/app/work/HuiPeiTong/app_lib/build/intermediates/res/merged/release/anim/fade_in.xml",
+        "source": "/app/work/HuiPeiTong/app_lib/src/main/res/anim/fade_in.xml"
     },
     {
-        "merged": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/res/merged/release/anim/right_in.xml",
-        "source": "/app/work/HuiPeiTong/AndroidAppFrame/src/main/res/anim/right_in.xml"
+        "merged": "/app/work/HuiPeiTong/app_lib/build/intermediates/res/merged/release/anim/right_in.xml",
+        "source": "/app/work/HuiPeiTong/app_lib/src/main/res/anim/right_in.xml"
     },
     {
-        "merged": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/res/merged/release/anim/left_out.xml",
-        "source": "/app/work/HuiPeiTong/AndroidAppFrame/src/main/res/anim/left_out.xml"
+        "merged": "/app/work/HuiPeiTong/app_lib/build/intermediates/res/merged/release/anim/top_out.xml",
+        "source": "/app/work/HuiPeiTong/app_lib/src/main/res/anim/top_out.xml"
     }
 ]

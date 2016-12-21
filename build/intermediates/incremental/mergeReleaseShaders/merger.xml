@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/app/work/HuiPeiTong/AndroidAppFrame/src/main/shaders"/></dataSet><dataSet config="release"><source path="/app/work/HuiPeiTong/AndroidAppFrame/src/release/shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/app/work/HuiPeiTong/app_lib/src/main/shaders"/></dataSet><dataSet config="release"><source path="/app/work/HuiPeiTong/app_lib/src/release/shaders"/></dataSet></merger>

@@ -7,7 +7,8 @@ import com.kz.android.base.KBaseActivity;
 import com.kz.core.R;
 
 /**
- * Created by Kezhuang on 2016/5/27.
+ * Created by 柯壮 on 2016/5/27.
+ * 测试工程类
  */
 public class TestBaseActivity extends KBaseActivity {
 

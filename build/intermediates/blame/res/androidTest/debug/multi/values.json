@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/res/merged/androidTest/debug/values/values.xml",
+        "outputFile": "/app/work/HuiPeiTong/app_lib/build/intermediates/res/merged/androidTest/debug/values/values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/app/work/HuiPeiTong/app_lib/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -30,7 +30,7 @@
                     "endOffset": 143
                 },
                 "from": {
-                    "file": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/app/work/HuiPeiTong/app_lib/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -49,7 +49,7 @@
                     "endOffset": 194
                 },
                 "from": {
-                    "file": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/app/work/HuiPeiTong/app_lib/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -68,7 +68,7 @@
                     "endOffset": 244
                 },
                 "from": {
-                    "file": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/app/work/HuiPeiTong/app_lib/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -87,7 +87,107 @@
                     "endOffset": 296
                 },
                 "from": {
-                    "file": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/bundles/debug/res/values/values.xml",
+                    "file": "/app/work/HuiPeiTong/app_lib/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 249,
+                        "endColumn": 51,
+                        "endOffset": 296
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "/app/work/HuiPeiTong/app_lib/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 45,
+                    "endOffset": 96
+                },
+                "from": {
+                    "file": "/app/work/HuiPeiTong/app_lib/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 45,
+                        "endOffset": 96
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 101,
+                    "endColumn": 46,
+                    "endOffset": 143
+                },
+                "from": {
+                    "file": "/app/work/HuiPeiTong/app_lib/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 101,
+                        "endColumn": 46,
+                        "endOffset": 143
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 148,
+                    "endColumn": 50,
+                    "endOffset": 194
+                },
+                "from": {
+                    "file": "/app/work/HuiPeiTong/app_lib/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 148,
+                        "endColumn": 50,
+                        "endOffset": 194
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 199,
+                    "endColumn": 49,
+                    "endOffset": 244
+                },
+                "from": {
+                    "file": "/app/work/HuiPeiTong/app_lib/build/intermediates/bundles/debug/res/values/values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 199,
+                        "endColumn": 49,
+                        "endOffset": 244
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 249,
+                    "endColumn": 51,
+                    "endOffset": 296
+                },
+                "from": {
+                    "file": "/app/work/HuiPeiTong/app_lib/build/intermediates/bundles/debug/res/values/values.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,

@@ -1,10 +1,10 @@
 [
     {
-        "merged": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/res/merged/androidTest/debug/layout/hello_world.xml",
-        "source": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/bundles/debug/res/layout/hello_world.xml"
+        "merged": "/app/work/HuiPeiTong/app_lib/build/intermediates/res/merged/androidTest/debug/layout/hello_world.xml",
+        "source": "/app/work/HuiPeiTong/app_lib/build/intermediates/bundles/debug/res/layout/hello_world.xml"
     },
     {
-        "merged": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/res/merged/androidTest/debug/layout/base_activity.xml",
-        "source": "/app/work/HuiPeiTong/AndroidAppFrame/build/intermediates/bundles/debug/res/layout/base_activity.xml"
+        "merged": "/app/work/HuiPeiTong/app_lib/build/intermediates/res/merged/androidTest/debug/layout/base_activity.xml",
+        "source": "/app/work/HuiPeiTong/app_lib/build/intermediates/bundles/debug/res/layout/base_activity.xml"
     }
 ]

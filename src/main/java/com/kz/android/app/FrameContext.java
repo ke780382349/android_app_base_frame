@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package com.kz.android.app;
 
 import android.content.Context;

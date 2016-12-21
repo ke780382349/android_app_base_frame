@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.kz.android.annotation.Inject;
 import com.kz.android.app.FrameContext;
 import com.kz.android.core.ActivityServer;
+import com.kz.android.core.HttpServer;
 import com.kz.android.util.KToast;
 import com.kz.core.R;
 
@@ -68,6 +69,13 @@ public class KBaseActivity extends FragmentActivity {
         mActivityServer.addActivity(this);
         Inject.header(this);
         Inject.anim(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mActivityServer.removeActivity(this);
+        ((HttpServer)FrameContext.getServer(this,FrameContext.APP_HTTP_SERVER)).clearDialog(this);
     }
 
     public int getActivityTheme() {
